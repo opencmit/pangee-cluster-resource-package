@@ -1,0 +1,8 @@
+kind: pangee-cluster-resource-package-list
+items:
+- version: k8s_1.28.15_v1
+  hidden: false
+  pangee_cluster_version:
+    min: v2.0.0
+  tag_name: k8s_1.28.15_v1
+  file_name: k8s_1.28.15_v1.zip
