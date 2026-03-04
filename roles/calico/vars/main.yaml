@@ -11,7 +11,7 @@ start_command:
   - systemctl restart NetworkManager
   - kubectl delete -f /tmp/calico-3.23.2-ipv6-vxlan.yaml || true
   - kubectl apply  -f /tmp/calico-3.23.2-ipv6-vxlan.yaml && rm -f /tmp/calico-3.23.2-ipv6-vxlan.yaml
-  - DUAL_STACK="{{ kube_network_dualstack_enabled }}"; [ x"$DUAL_STACK" != x"true" ] || kubectl patch ippool default-ipv6-ippool --type='json' -p '[{"op":"add","path":"/spec/natOutgoing","value":true}]'
+  - DUAL_STACK="{{ kube_network_dualstack_enabled }}"; [ x"$DUAL_STACK" != x"True" ] || kubectl patch ippool default-ipv6-ippool --type='json' -p '[{"op":"add","path":"/spec/natOutgoing","value":true}]'
 
 check_app:
   - kubectl get pods -n kube-system --no-headers | grep calico | grep Running
